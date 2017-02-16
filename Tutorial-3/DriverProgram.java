@@ -34,7 +34,9 @@ public class DriverProgram{
 			else if(type==3){
 				IntervalNode x=new IntervalNode();
 				x=intervalTree.search(temp);
-				System.out.println("{" + x.getLow() + "," + x.getHigh() + "}");
+				if(x!=null){
+					System.out.println("{" + x.getLow() + "," + x.getHigh() + "}");
+				}
 			}
 			else if(type!=-1){
 				System.out.println("Please give a valid input");
