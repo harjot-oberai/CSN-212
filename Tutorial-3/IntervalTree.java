@@ -111,7 +111,7 @@ public class IntervalTree{
 		//take care of that later
 		while(true){
 			if(current==null){
-				System.out.println("Interval not found! \n");
+				System.out.println("Interval not found!");
 				break;
 			}
 			if(tempNode.getLow() < current.getLow()){
@@ -138,11 +138,11 @@ public class IntervalTree{
 		IntervalNode current=root;
 		while(true){
 			if(current==null){
-				System.out.println("No overlap found\n");
+				System.out.println("No overlap found");
 				return null;
 			}
 			if((tempNode.getLow() <= current.getHigh()) && (tempNode.getHigh() >= current.getLow())){
-				System.out.println("An overlapping node found.\n");
+				System.out.println("An overlapping node found.");
 				return current;
 			}
 			if(current.getLeftChild() !=null){
@@ -152,7 +152,7 @@ public class IntervalTree{
 				if(current.getRightChild().getMax() >= tempNode.getLow()) current=current.getRightChild();
 			}
 			else{
-				System.out.println("No overlap found\n");
+				System.out.println("No overlap found");
 				return null;
 			}
 

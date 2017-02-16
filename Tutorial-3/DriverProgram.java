@@ -9,11 +9,10 @@ public class DriverProgram{
 
 		int type = 1;
 
-		System.out.println("Follow the the following instructions for input:\n");
-		System.out.println("To insert an interval: \"1 low_value high_Value\"\n");
-		System.out.println("To delete an interval: \"2 low_value high_Value\"\n");
-		System.out.println("To search an interval-overlap: \"3 low_value high_Value\"\n");
-		System.out.println("To stop the execution: \"-1\"\n");
+		System.out.println("Format to insert Interval 	: \"1 lowValue highValue\"");
+		System.out.println("Format to delete Interval 	: \"2 lowValue highValue\"");
+		System.out.println("Format to search for Interval overlap  	: \"3 lowValue highValue\"");
+		System.out.println("Input to stop the execution : \"-1\"");
 		while(type!=-1){
 			IntervalNode temp = new IntervalNode();
 			type = sc.nextInt();
@@ -21,7 +20,7 @@ public class DriverProgram{
 				temp.setLow(sc.nextInt());
 				temp.setHigh(sc.nextInt());
 				while(temp.getHigh() < temp.getLow()){
-					System.out.println("Not the valid interval. Enter the interval values again:\n");
+					System.out.println("Please enter a valid interval to insert");
 					temp.setLow(sc.nextInt());
 					temp.setHigh(sc.nextInt());
 				}
@@ -35,12 +34,11 @@ public class DriverProgram{
 			else if(type==3){
 				IntervalNode x=new IntervalNode();
 				x=intervalTree.search(temp);
-				System.out.println(x.getLow());
+				System.out.println("{" + x.getLow() + "," + x.getHigh() + "}");
 			}
 			else if(type!=-1){
-				System.out.println("Invalid input, please give input again.\n");
+				System.out.println("Please give a valid input");
 			}
-			//show(root); System.out.println(endl;
 		}
 
 	}
